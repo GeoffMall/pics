@@ -1,0 +1,9 @@
+<mat-card>
+  Crypto
+
+  <div *ngIf="coins">
+    <span>Rank {{currentCoin?.rank}}</span>
+    <span>{{currentCoin?.symbol}} {{currentCoin?.price_usd | currency:'USD':'symbol':'1.2-2'}}</span>
+  </div>
+
+</mat-card>

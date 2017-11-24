@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -8,9 +9,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  public title = 'G';
+
+  constructor(private router: Router) {
+  }
 
   ngOnInit() {
+  }
+
+  public navigateTo(url: string): void {
+    this.router.navigate([url])
+      .then(() => {
+        this.title = url;
+      });
   }
 
 }
